@@ -1,0 +1,14 @@
+C:\Projects\pfromerApi\pfromerApi\bin\Debug\netcoreapp2.2\pfromerApi.deps.json
+C:\Projects\pfromerApi\pfromerApi\bin\Debug\netcoreapp2.2\pfromerApi.runtimeconfig.json
+C:\Projects\pfromerApi\pfromerApi\bin\Debug\netcoreapp2.2\pfromerApi.runtimeconfig.dev.json
+C:\Projects\pfromerApi\pfromerApi\bin\Debug\netcoreapp2.2\pfromerApi.dll
+C:\Projects\pfromerApi\pfromerApi\bin\Debug\netcoreapp2.2\pfromerApi.pdb
+C:\Projects\pfromerApi\pfromerApi\obj\Debug\netcoreapp2.2\pfromerApi.csprojAssemblyReference.cache
+C:\Projects\pfromerApi\pfromerApi\obj\Debug\netcoreapp2.2\pfromerApi.csproj.CoreCompileInputs.cache
+C:\Projects\pfromerApi\pfromerApi\obj\Debug\netcoreapp2.2\pfromerApi.RazorAssemblyInfo.cache
+C:\Projects\pfromerApi\pfromerApi\obj\Debug\netcoreapp2.2\pfromerApi.RazorAssemblyInfo.cs
+C:\Projects\pfromerApi\pfromerApi\obj\Debug\netcoreapp2.2\pfromerApi.AssemblyInfoInputs.cache
+C:\Projects\pfromerApi\pfromerApi\obj\Debug\netcoreapp2.2\pfromerApi.AssemblyInfo.cs
+C:\Projects\pfromerApi\pfromerApi\obj\Debug\netcoreapp2.2\pfromerApi.RazorTargetAssemblyInfo.cache
+C:\Projects\pfromerApi\pfromerApi\obj\Debug\netcoreapp2.2\pfromerApi.dll
+C:\Projects\pfromerApi\pfromerApi\obj\Debug\netcoreapp2.2\pfromerApi.pdb

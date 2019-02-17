@@ -1,0 +1,191 @@
+<html>
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>      
+</head>
+<body>
+    <script>
+
+        var baseUrl = "https://localhost:44321/";
+        function createContact(name, companyId, email, birthdate, personalPhoneNumber, workPhoneNumber, 
+                            addressLine1, city, state, zipCode, countryId) {
+        var data = {
+            Name: name,
+            Company: {
+                Id: companyId
+            },
+            Email: email,
+            Birthdate: birthdate,
+            PersonalPhoneNumber: personalPhoneNumber,
+            WorkPhoneNumber: workPhoneNumber,
+            Address: {
+                AddressLine1: addressLine1,
+                City: city,
+                State: state,
+                ZipCode: zipCode,
+                Country: {
+                    Id: countryId
+                }
+            },
+        }
+
+        $.ajax({
+            type: 'POST',
+            url: baseUrl + 'api/contacts',
+            dataType: 'json',
+            contentType: 'application/json; charset=utf-8',
+            data: JSON.stringify(data),
+            success: function (result) {
+                console.log('Data received: ');
+                console.log(result);
+            },
+            error: function (request, status, error) {
+                console.log('Something went wrong: ');
+                console.log(request.responseJSON.value.description);
+            }
+        });
+    }
+
+    //UPDATE contact
+    function updateContact(contactId, name, companyId, email, birthdate, personalPhoneNumber, workPhoneNumber, 
+                            addressLine1, city, state, zipCode, countryId) {
+            var data = {
+                Name: name,
+                Company: { 
+                        Id: companyId
+                    },
+                Email: email,
+                Birthdate: birthdate,
+                PersonalPhoneNumber: personalPhoneNumber,
+                WorkPhoneNumber: workPhoneNumber,
+                Address: {
+                    AddressLine1: addressLine1,
+                    City: city,
+                    State: state,
+                    ZipCode: zipCode,
+                    Country: {
+                        Id: countryId
+                    }
+                },
+            }
+
+            $.ajax({
+                type: 'PUT',
+                url: baseUrl + 'api/contacts/' + contactId,
+                dataType: 'json',
+                contentType: 'application/json; charset=utf-8',
+                data: JSON.stringify(data),
+                success: function(result) {
+                    console.log('Data received: ');
+                    console.log(result);
+                },
+                error: function (request, status, error) {
+                    console.log('Something went wrong: ');
+                    console.log(request.responseJSON.value.description);
+                }
+            });
+        }
+
+        function deleteContact(contactId){
+            $.ajax({
+                type: 'DELETE',
+                url: baseUrl + 'api/contacts/' + contactId,
+                success: function(result) {
+                    console.log('Data received: ');
+                    console.log(result);
+                },
+                error: function (request, status, error) {
+                    console.log('Something went wrong: ');
+                    console.log(request.responseJSON.value.description);
+                }
+            });
+
+            $.ajax(settings).done(function (response) {
+                console.log(response);
+            });
+        }
+
+        function getContactById(contactId){
+            $.ajax({
+                type: 'get',
+                url: baseUrl + 'api/contacts/' + contactId,
+                dataType: 'json',
+                contentType: 'application/json; charset=utf-8',
+                success: function(result) {
+                    console.log('Data received: ');
+                    console.log(result);
+                },
+                error: function (request, status, error) {
+                    console.log('Something went wrong: ');
+                    console.log(JSON.parse(request.responseText).value.description);
+                }
+            });
+        }
+
+
+        function getAllContactsByStateAndCity(state, city){
+            $.get(baseUrl + 'api/contacts/all?state=' + state +"&city=" + city, function (data) {
+                console.log("Get all contacts by city and state result:")
+                console.log(data);
+            });
+        }
+
+        function searchContactByEmailAndPersonalPhoneNumber(email, phoneNumber){
+            $.ajax({
+                type: 'get',
+                url: baseUrl + 'api/contacts/search?email=' + email + '&phoneNumber=' + phoneNumber,
+                dataType: 'json',
+                contentType: 'application/json; charset=utf-8',
+                success: function(result) {
+                    console.log('Data received: ');
+                    console.log(result);
+                },
+                error: function (request, status, error) {
+                    console.log('Something went wrong: ');
+                    console.log(JSON.parse(request.responseText).value.description);
+                }
+            });
+        }
+
+        function loadProfilePicture(contactId){
+            $.ajax({
+                type: 'get',
+                url: baseUrl + 'api/pictures/' + contactId,
+                dataType: 'json',
+                contentType: 'application/json; charset=utf-8',
+                success: function(result) {    
+                    document.getElementById("ItemPreview").src = "data:image/png;base64," + result;
+                    $("#ItemPreview").show();
+                },
+                error: function (request, status, error) {
+                    console.log('Something went wrong: ');
+                    console.log(JSON.parse(request.responseText).value.description);
+                }
+            });
+        }
+    </script>
+
+<div class="container">
+        <div class="row">
+                <div class="col-sm">
+            <form method="POST" enctype="multipart/form-data" style="width:50%; margin-left:20px; margin-top:20px;" id="form" action="https://localhost:44321/api/pictures/">
+                <div class="form-group">
+                    <label for="contactId">Contact Id</label>
+                    <input name="contactId" type="text" class="form-control" aria-describedby="help" placeholder="Enter contact id">
+                </div>
+                <div class="form-group">
+                        <label for="exampleFormControlFile1">Select Image</label>
+                        <input type="file" class="form-control-file" name="file" accept="image/png, image/jpeg" id="exampleFormControlFile1">
+                </div>
+                <button type="submir" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+        <div>
+        <img style="display:none;margin-top: 40px"; id="ItemPreview" src="" height="200" width="200"/>
+        </div>
+            
+        
+    </div>
+</div>
+</body>
+</html>
