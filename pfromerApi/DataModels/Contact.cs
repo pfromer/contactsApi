@@ -29,6 +29,19 @@ namespace pfromerApi.DataModels
         public String PersonalPhoneNumber { get; set; }
 
         [Required]
-        public Address Address { get; set; } 
+        public Address Address { get; set; }
+
+        public bool Equals(Contact anotherContact)
+        {
+            return anotherContact.Name == this.Name &&
+                anotherContact.Company.Id == this.Company.Id &&
+                anotherContact.Email == this.Email &&
+                anotherContact.Birthdate == this.Birthdate &&
+                anotherContact.WorkPhoneNumber == this.WorkPhoneNumber &&
+                anotherContact.PersonalPhoneNumber == this.PersonalPhoneNumber;
+
+            //TODO: also compare addresses are equal/ implement Equals method in Address class
+        }
+
     }
 }

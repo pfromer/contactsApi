@@ -1,0 +1,7 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/bin
+/obj
+
+../.vs/pfromerApi/v15/Server/sqlite3/db.lock"

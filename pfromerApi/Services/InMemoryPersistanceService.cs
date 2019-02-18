@@ -152,7 +152,6 @@ namespace pfromerApi.Services
             return new ExecutionResult(_profilePictures[contactId]);
         }
 
-
         #region private methods
         private void InitializeCompanies()
         {

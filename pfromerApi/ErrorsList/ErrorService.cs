@@ -20,7 +20,7 @@ namespace pfromerApi.ErrorsList
     {
         public ExecutionResult(int code, string description) {
             Success = false;
-            Code = Code;
+            Code = code;
             Description = description;
         }
 
@@ -36,5 +36,12 @@ namespace pfromerApi.ErrorsList
         public string Description { get; }
         public object QueryResult { get; }
 
+        public bool Equals(ExecutionResult executionResult)
+        {
+            return this.Code == executionResult.Code && 
+                this.Success == executionResult.Success && 
+                this.Description == executionResult.Description && 
+                this.QueryResult == executionResult.QueryResult;
+        }
     }
 }

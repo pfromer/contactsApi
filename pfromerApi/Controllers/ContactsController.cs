@@ -79,7 +79,7 @@ namespace pfromerApi.Controllers
             if (!result.Success)
                 return BadRequest(Json(result));
 
-            return Created(new Uri($"{Request.Path}/{((Contact)result.QueryResult).Id}", UriKind.Relative), result.QueryResult);
+            return Created(new Uri($"/api/Contacts/{((Contact)result.QueryResult).Id}", UriKind.Relative), result.QueryResult);
         }
 
         /// <summary>
@@ -95,7 +95,7 @@ namespace pfromerApi.Controllers
             if (!result.Success)
                 return BadRequest(Json(result));
 
-            return Created(new Uri($"{Request.Path}/{((Contact)result.QueryResult).Id}", UriKind.Relative), result.QueryResult);
+            return Created(new Uri($"/api/Contacts/{((Contact)result.QueryResult).Id}", UriKind.Relative), result.QueryResult);
         }
 
         /// <summary>
