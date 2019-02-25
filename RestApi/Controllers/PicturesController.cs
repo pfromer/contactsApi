@@ -4,9 +4,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using pfromerApi.Services;
+using RestApi.Services;
 
-namespace pfromerApi.Controllers
+namespace RestApi.Controllers
 {
 
     [Consumes("application/json", "multipart/form-data")]

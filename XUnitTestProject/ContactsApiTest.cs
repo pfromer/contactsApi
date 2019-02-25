@@ -1,10 +1,10 @@
-using pfromerApi.Controllers;
-using pfromerApi.DataModels;
-using pfromerApi.Services;
+using RestApi.Controllers;
+using RestApi.DataModels;
+using RestApi.Services;
 using System;
 using Xunit;
 using Microsoft.AspNetCore.Mvc;
-using pfromerApi.ErrorsList;
+using RestApi.ErrorsList;
 
 namespace XUnitTestProject1
 {

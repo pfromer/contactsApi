@@ -15,7 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\pfromerApi\pfromerApi.csproj" />
+    <ProjectReference Include="..\RestApi\pFromerRestApi.csproj" />
   </ItemGroup>
 
 </Project>

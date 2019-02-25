@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.421
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "pfromerApi", "pfromerApi\pfromerApi.csproj", "{2EDB73CF-19C6-4665-9268-8C3DC5D0F1BC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "pFromerRestApi", "RestApi\pFromerRestApi.csproj", "{2EDB73CF-19C6-4665-9268-8C3DC5D0F1BC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "XUnitTestProject1\UnitTests.csproj", "{24C18984-5EB6-4109-B664-0CF060CB63C0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnitTests", "XUnitTestProject\UnitTests.csproj", "{24C18984-5EB6-4109-B664-0CF060CB63C0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

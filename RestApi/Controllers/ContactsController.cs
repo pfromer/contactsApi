@@ -1,10 +1,10 @@
 ﻿using System;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using pfromerApi.DataModels;
-using pfromerApi.Services;
+using RestApi.DataModels;
+using RestApi.Services;
 
-namespace pfromerApi.Controllers
+namespace RestApi.Controllers
 {
     [Consumes("application/json", "multipart/form-data")]
     [Route("api/[controller]")]

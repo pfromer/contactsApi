@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace pfromerApi.DataModels
+namespace RestApi.DataModels
 {
     public class Address
     {
